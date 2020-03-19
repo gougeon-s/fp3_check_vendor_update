@@ -19,7 +19,7 @@ cp check_update.sh /data/data/com.termux/files/home/.termux/app/
 
 crontab -l 2>/dev/null | grep "/data/data/com.termux/files/home/.termux/app/check_update.sh" > /dev/null
 if [ $? -ne 0 ]; then
-  echo "$(crontab -l 2>/dev/null)\n* 17 * * * /data/data/com.termux/files/home/.termux/app/check_update.sh" | crontab -
+  echo "$(crontab -l 2>/dev/null)\n0 17 * * * /data/data/com.termux/files/home/.termux/app/check_update.sh" | crontab -
 else
   echo "[-] check_update.sh is already in crontab"
 fi
